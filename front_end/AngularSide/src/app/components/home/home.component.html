@@ -1,0 +1,38 @@
+<header></header>
+
+<h2>Add your Countries</h2>
+<hr style="border: #ccc 2px solid; margin: 5px 5px; text-align: center;">
+
+<!-- Search Box -->
+<div class="input-group mb-3">
+<input type="text" class="form-control" placeholder="Your CountryName">
+<div class="input-group-append">
+  <span class="input-group-text" id="basic-addon2">SEARCH</span>
+</div>
+</div>
+
+<!-- Country Cards -->
+<div class="row row-cols-1 row-cols-md-2 g-">
+<div class="col ">
+<div class="container ">
+  <ng-container *ngFor="let item of items">
+
+<div class="card" style="width: 18rem;">
+  <img [src]="item.flags.svg" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{item.name.common}}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Capital:{{ item.capital}}</li>
+    <li class="list-group-item">Region:{{ item.region}}</li>
+    <li class="list-group-item">Subregion:{{ item.subregion}}</li>
+    <li class="list-group-item">Population:{{ item.population}}</li>
+  </ul>
+  <div class="card-body">
+    <button class="card-link" (click)="addFavorite(item)">Add to Fav</button>
+  </div>
+</div>
+</ng-container>
+</div>
+</div>
+</div>

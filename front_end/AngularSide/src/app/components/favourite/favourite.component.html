@@ -1,0 +1,27 @@
+<header></header>
+
+<!-- Country Cards -->
+<div class="row row-cols-1 row-cols-md-2 g-">
+<div class="col ">
+<div class="container ">
+  <ng-container *ngFor="let item of items">
+
+<div class="card" style="width: 18rem;">
+  <img [src]="item.flags.svg" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{item.name.common}}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Capital:{{ item.capital}}</li>
+    <li class="list-group-item">Region:{{ item.region}}</li>
+    <li class="list-group-item">Subregion:{{ item.subregion}}</li>
+    <li class="list-group-item">Population:{{ item.population}}</li>
+  </ul>
+  <div class="card-body">
+    <button class="card-link" (click)="addFavorite(item)">Add to Fav</button>
+  </div>
+</div>
+</ng-container>
+</div>
+</div>
+</div>
